@@ -22,6 +22,7 @@ This repository automates the provisioning and management of Azure subscriptions
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/sunnybharne/azure-subscription-vending.git
+   ```
 
 2.**Set Up Azure DevOps Pipelines**:
    Follow the instructions in the /pipelines directory to set up and configure your Azure DevOps pipelines.
