@@ -26,54 +26,6 @@ jobs:
   displayName: 'Subscription Vending'
   steps:
 
-    # Reference the 'install-tools.yml' file
-    # - template: templates/install-tools.yml
-    #   parameters:
-    #     displayNameAzCLI: 'Check and Install Az CLI'
-    #     displayNameAzPowerShell: 'Check and Install Az PowerShell'
-    #     displayNameDocker: 'Check and Install Docker'
-    #     displayNamePowerShell: 'Check and Install PowerShell'
-
-    # - task: AzurePowerShell@5
-    #   inputs:
-    #     azureSubscription: 'YourAzureSubscription'
-    #     ScriptType: 'InlineScript'
-    #     Inline: |
-    #       # Run your PowerShell script and collect the array
-    #       $array = @("value1", "value2", "value3")
-    #       # Convert array to JSON for Azure DevOps variable
-    #       $arrayJson = $array | ConvertTo-Json -Compress
-    #       # Set the pipeline variable
-    #       Write-Host "##vso[task.setvariable variable=collectedArray]$arrayJson"
-    #       displayName: 'Run PowerShell Script and Collect Array'
-           
-    # - script: |
-    #      echo "Collected Array: $(collectedArray)"
-    #    displayName: 'Print Collected Array'
-    # Add more steps as needed
-    # - script: |
-    #     # sudo dpkg --configure -a
-    #     # sudo apt-get update
-    #     sudo usermod -aG docker $(whoami)
-    #     # docker run hello-world
-    #     # echo "Added $CURRENT_USER to the docker group."
-    #     # groups $(whoami)
-    #   displayName: 'Add user'
-    
-    # - task: AzurePowerShell@5
-    #   displayName: Git diff
-    #   inputs:
-    #     azureSubscription: '${{ parameters.azureServiceConnection }}'
-    #     scriptType: filePath 
-    #     scriptPath: pipelines/scripts/main.ps1
-    #     scriptArguments:
-    #       -acrName 'tuttuacrplatformiacsc01'
-    #       -gitDiffPath 'modules/resources/*/*.bicep'
-    #     azurePowerShellVersion: latestVersion
-    #     FailOnStandardError: true
-    #     errorActionPreference: 'stop' # | 'stop' | 'continue' | 'silentlyContinue'
-    #     pwsh: true
-
     - task: AzureCLI@2
       displayName: Azure CLI
       inputs:
