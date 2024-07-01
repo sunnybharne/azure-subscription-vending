@@ -25,7 +25,6 @@ jobs:
 - job: 
   displayName: 'Subscription Vending'
   steps:
-
     - task: AzureCLI@2
       displayName: Azure CLI
       inputs:
