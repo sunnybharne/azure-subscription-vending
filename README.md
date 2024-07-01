@@ -24,13 +24,13 @@ This repository automates the provisioning and management of Azure subscriptions
    git clone https://github.com/sunnybharne/azure-subscription-vending.git
    ```
 
-2.**Set Up Azure DevOps Pipelines**:
+2. **Set Up Azure DevOps Pipelines**:
    Follow the instructions in the /pipelines directory to set up and configure your Azure DevOps pipelines.
 
-3.**Customize Bicep Templates**:
+3. **Customize Bicep Templates**:
    Modify the Bicep templates in the /bicep directory to meet your specific requirements.
 
-4.**Deploy**:
+4. **Deploy**:
    Run the pipelines to automate the subscription vending process.
 
 ## Contributing
