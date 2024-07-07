@@ -10,13 +10,13 @@ trigger:
 parameters:
   - name: azureServiceConnection
     type: string
-    default: 'id-subventing-sc-prod-01' # Define your Azure service connection here
+    default: 'id-subventing-sc-prod-01' 
 
-variables:
-  location: 'swedencentral'
-  csmParametersFile: './main.bicepparam'
-  deploymentScope: 'subscription'
-  deploymentName: 'tuttu-billingscope-iac'
+# variables:
+#   location: 'swedencentral'
+#   csmParametersFile: './main.bicepparam'
+#   deploymentScope: 'subscription'
+#   deploymentName: 'tuttu-billingscope-iac'
 
 pool:
   name: 'selfhostedvm'
