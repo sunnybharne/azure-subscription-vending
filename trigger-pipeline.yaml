@@ -33,4 +33,4 @@ jobs:
         scriptLocation: inlineScript
         inlineScript: |
           az --version
-          az deployment mg create --management-group-id tuttu-root --parameters ./main.bicepparam -l swedencentral
+          az deployment mg create --management-group-id management --parameters ./main.bicepparam -l swedencentral
