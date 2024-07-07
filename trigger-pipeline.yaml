@@ -33,4 +33,4 @@ jobs:
         scriptLocation: inlineScript
         inlineScript: |
           az --version
-          az deployment tenant create -n $(deploymentName) -l $(location) --parameters $(csmParametersFile)
+          az deployment mg create --management-group-id tuttu-root --parameters ./main.bicepparam -l swedencentral
