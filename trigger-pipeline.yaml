@@ -19,7 +19,7 @@ variables:
   deploymentName: 'tuttu-billingscope-iac'
 
 pool:
-  name: 'selfhosted'
+  name: 'selfhostedvm'
 
 jobs:
 - job: 
