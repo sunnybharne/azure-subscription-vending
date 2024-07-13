@@ -10,7 +10,7 @@ trigger:
 parameters:
   - name: azureServiceConnection
     type: string
-    default: 'id-subventing-sc-prod-01' 
+    default: 'id-sub' 
 
 # variables:
 #   location: 'swedencentral'
