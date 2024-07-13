@@ -19,7 +19,7 @@ parameters:
 #   deploymentName: 'tuttu-billingscope-iac'
 
 pool:
-  name: 'selfhostedvm'
+  name: 'selfhosted'
 
 jobs:
 - job: 
@@ -28,9 +28,9 @@ jobs:
     - task: AzureCLI@2
       displayName: Azure CLI
       inputs:
-        azureSubscription: azureServiceConnection
+        azureSubscription: ${{ parameters.azureServiceConnection }}
         scriptType: ps
         scriptLocation: inlineScript
         inlineScript: |
           az --version
-          az deployment mg create --management-group-id management --parameters ./main.bicepparam -l swedencentral
+          az deployment mg create --management-group-id tuttu-root --parameters ./main.bicepparam -l swedencentral
