@@ -12,7 +12,7 @@ pool:
 
 jobs:
 - job:
-  displayName: 'Subscription vending branch build'
+  displayName: 'branch build'
   steps: 
     - script: |
         az bicep build -f ./main.bicep
