@@ -32,7 +32,7 @@ jobs:
     - task: AzureCLI@2
       displayName: What-if
       inputs:
-        azureSubscription: ${{ parameters.azureServiceConnection }}
+        azureSubscription: ${{ variables.azureServiceConnection }}
         scriptType: bash
         scriptLocation: inlineScript
         inlineScript: |
