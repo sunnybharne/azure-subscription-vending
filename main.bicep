@@ -25,10 +25,10 @@ module createSubscription './modules/create-subscription.bicep' = {
   }
 }
 
-module moveSubscription './modules/move-subscription.bicep' = {
-  name: 'move'
-  params: {
-    targetMgId: managementGroupId
-    subscriptionId: createSubscription.outputs.id
-  }
-}
+// module moveSubscription './modules/move-subscription.bicep' = {
+//   name: 'move'
+//   params: {
+//     targetMgId: managementGroupId
+//     subscriptionId: createSubscription.outputs.id
+//   }
+// }
