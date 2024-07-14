@@ -10,7 +10,7 @@ pool:
   name: 'selfhosted'
 
 variables:
-  serviceConnection: 'id-sub'
+  azureserviceConnection: 'id-sub'
   location: 'swedencentral'
   csmParametersFile: './main.bicepparam'
 
@@ -27,11 +27,12 @@ jobs:
           az bicep lint -f $file
         done
       displayName: 'lint'
-    - task: AzureResourceManagerTemplateDeployment@3
+    - task: AzureCLI@2
+      displayName: 'Priflight validation'
       inputs:
-          deploymentScope: 'managementGroup'
-          # azureResourceManagerConnection: ${{ variables.serviceConnection }}
-          location: ${{ variables.location }}
-          csmParametersFile: ${{ variables.csmParametersFile }}
-          deploymentMode: 'validation'
-      displayName: 'Preflight validation'
+        azureSubscription: ${{ parameters.azureServiceConnection }}
+        scriptType: bash
+        scriptLocation: inlineScript
+        inlineScript: |
+          az --version
+          az deployment mg create --management-group-id '7d8e621a-3561-4cc4-9ee6-f03bc8610835' --parameters ./main.bicepparam -l swedencentral -deploymentMode validation

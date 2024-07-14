@@ -33,4 +33,4 @@ jobs:
         scriptLocation: inlineScript
         inlineScript: |
           az --version
-          az deployment mg create --management-group-id '7d8e621a-3561-4cc4-9ee6-f03bc8610835' --parameters ./main.bicepparam -l swedencentral
+          az deployment mg create --management-group-id '7d8e621a-3561-4cc4-9ee6-f03bc8610835' --parameters ./main.bicepparam -l swedencentral 
