@@ -10,7 +10,7 @@ pool:
   name: 'selfhosted'
 
 variables:
-  azureserviceConnection: 'id-sub'
+  azureServiceConnection: 'id-sub'
   location: 'swedencentral'
   csmParametersFile: './main.bicepparam'
 
