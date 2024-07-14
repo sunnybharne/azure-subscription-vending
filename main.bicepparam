@@ -10,4 +10,4 @@ param tags = {
   environment: 'Production'
 }
 
-param managementGroupId = 'management'
+param managementGroupId = 'tuttu-root'
