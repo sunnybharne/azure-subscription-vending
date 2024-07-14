@@ -25,4 +25,5 @@ resource subscriptionAlias 'Microsoft.Subscription/aliases@2021-10-01' = {
   }
 }
 
-output id string = subscriptionAlias.properties.subscriptionId
+output subscriptionId string = subscriptionAlias.properties.subscriptionId
+output id string = subscriptionAlias.id
