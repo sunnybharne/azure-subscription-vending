@@ -28,11 +28,11 @@ jobs:
         done
       displayName: 'lint'
     - task: AzureCLI@2
-      displayName: 'Priflight validation'
+      displayName: 'Preflight Validation'
       inputs:
         azureSubscription: ${{ variables.azureServiceConnection }}
         scriptType: bash
         scriptLocation: inlineScript
         inlineScript: |
           az --version
-          az deployment mg create --management-group-id '7d8e621a-3561-4cc4-9ee6-f03bc8610835' --parameters ./main.bicepparam -l swedencentral -deploymentMode validation
+          az deployment mg create --management-group-id '7d8e621a-3561-4cc4-9ee6-f03bc8610835' --parameters ./main.bicepparam -l swedencentral --deploymentMode validation
