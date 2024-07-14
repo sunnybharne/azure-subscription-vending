@@ -30,7 +30,7 @@ jobs:
     - task: AzureCLI@2
       displayName: 'Priflight validation'
       inputs:
-        azureSubscription: ${{ parameters.azureServiceConnection }}
+        azureSubscription: ${{ variables.azureServiceConnection }}
         scriptType: bash
         scriptLocation: inlineScript
         inlineScript: |
