@@ -15,6 +15,10 @@ jobs:
   displayName: 'branch build'
   steps: 
     - script: |
-        find . -type f -name "*.bicep" -or -name "*.bicepparam"
-        # az bicep lint -f ./main.bicepparam
+        file_array=$(find . -type f -name "*.bicep" -or -name "*.bicepparam")
+        for file in $file_array
+        do
+          echo "Linting $file"
+          az bicep lint -f $file
+        done
       displayName: 'lint'
