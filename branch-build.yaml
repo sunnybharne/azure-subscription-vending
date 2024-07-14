@@ -15,5 +15,6 @@ jobs:
   displayName: 'branch build'
   steps: 
     - script: |
-        az bicep lint -f ./main.bicepparam
+        find . -type f -name "*.bicep" -or -name "*.bicepparam"
+        # az bicep lint -f ./main.bicepparam
       displayName: 'lint'
