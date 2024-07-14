@@ -30,7 +30,7 @@ jobs:
     - task: AzureResourceManagerTemplateDeployment@3
       inputs:
           deploymentScope: 'managementGroup'
-          azureResourceManagerConnection: ${{ variables.serviceConnection }}
+          # azureResourceManagerConnection: ${{ variables.serviceConnection }}
           location: ${{ variables.location }}
           csmParametersFile: ${{ variables.csmParametersFile }}
           deploymentMode: 'validation'
