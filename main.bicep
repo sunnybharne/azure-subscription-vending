@@ -12,8 +12,8 @@ param workload string
 @description('The tags for the subscription')
 param tags object
 
-@description('The management group to move the subscription to')
-param managementGroupId string
+ @description('The management group to move the subscription to')
+ param managementGroupId string
 
 // var subscriptionId = ''
 
