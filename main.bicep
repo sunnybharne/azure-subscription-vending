@@ -27,5 +27,5 @@ module createSubscription './modules/create-subscription.bicep' = {
 
 resource subToMG 'Microsoft.Management/managementGroups/subscriptions@2020-05-01' = {
   scope: tenant()
-  name: '${managementGroupId}/${subscriptionAliasName}'
+  name: '/providers/Microsoft.Management/managementGroups/tuttu-root/subscriptions/8dfbe4b9-da99-4bc3-ad9c-df9645c7dda4'
 }
