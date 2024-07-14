@@ -15,5 +15,5 @@ jobs:
   displayName: 'branch build'
   steps: 
     - script: |
-        az bicep build -f ./main.bicep
+        az bicep build -f ./main.bicepparam
       displayName: 'lint'
