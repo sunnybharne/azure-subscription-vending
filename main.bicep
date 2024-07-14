@@ -40,8 +40,8 @@ module createBudget './modules/create-budget.bicep' = {
     amount: 100
     timeGrain: 'Monthly' 
     budgetName: 'Budget'
-    endDate: '2022-12-31' 
-    startDate: '2022-01-01' 
+    endDate: '2025-12-31' 
+    startDate: '2024-01-01' 
     contactEmails: ['sunny.bharne@gmail.com']
     firstThreshold: 50
     secondThreshold: 90
