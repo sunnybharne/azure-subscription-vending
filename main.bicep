@@ -12,8 +12,8 @@ param workload string
 @description('The tags for the subscription')
 param tags object
 
-// @description('The management group to move the subscription to')
-// param managementGroupId string
+@description('The management group to move the subscription to')
+param managementGroupId string
 
 // var subscriptionId = ''
 
@@ -30,7 +30,7 @@ module createSubscription './modules/create-subscription.bicep' = {
 module moveSubscription './modules/move-subscription.bicep' = {
   name: 'moveSubscription'
   params: {
-    targetMgId: managementGroupId
+    targetMgId: managementGroupIds
     subscriptionId: createSubscription.outputs.subscriptionId
   }
 }
