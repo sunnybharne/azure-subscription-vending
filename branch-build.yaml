@@ -29,13 +29,22 @@ jobs:
         done
       displayName: 'lint'
 
-    - task: AzureResourceManagerTemplateDeployment@3
+    - task: AzureCLI@2
+      displayName: What-if
       inputs:
-        deploymentScope: 'Management Group'
-        ConnectedServiceName: ${{ variables.azureServiceConnection }}
-        location: ${{ variables.location }}
-        deploymentMode: Validation
-        csmParametersFile: ${{ variables.csmParametersFile }} 
-        ManagementGroupId: ${{ variables.rootMgmId }}
-      displayName: 'Preflight validation'
+        azureSubscription: ${{ parameters.azureServiceConnection }}
+        scriptType: bash
+        scriptLocation: inlineScript
+        inlineScript: |
+          az deployment mg what-if --management-group-id '7d8e621a-3561-4cc4-9ee6-f03bc8610835' --parameters ./main.bicepparam -l swedencentral
+
+    # - task: AzureResourceManagerTemplateDeployment@3
+    #   inputs:
+    #     deploymentScope: 'Management Group'
+    #     ConnectedServiceName: ${{ variables.azureServiceConnection }}
+    #     location: ${{ variables.location }}
+    #     deploymentMode: Validation
+    #     csmParametersFile: ${{ variables.csmParametersFile }} 
+    #     ManagementGroupId: ${{ variables.rootMgmId }}
+    #   displayName: 'Preflight validation'
 
