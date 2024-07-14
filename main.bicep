@@ -15,8 +15,6 @@ param tags object
 @description('The management group to move the subscription to')
 param managementGroupId string
 
-var subscriptionId = 'some-value'
-
 module createSubscription './modules/create-subscription.bicep' = {
   name: subscriptionAliasName
   params: {
@@ -35,17 +33,17 @@ module moveSubscription './modules/move-subscription.bicep' = {
   }
 }
 
-module createBudget './modules/create-budget.bicep' = {
-  scope: subscription(subscriptionId)
-  name: 'createBudget'
-  params: {
-    budgetName: subscriptionAliasName
-    startDate: '2024-01-01'
-    endDate: '2025-12-31'
-    amount: 1000
-    timeGrain:'Monthly' 
-    contactEmails: ['sunny.bharne@gmail.com' ]
-    firstThreshold: 50
-    secondThreshold: 90
-  }
-}
+// module createBudget './modules/create-budget.bicep' = {
+//   scope: subscription(subscriptionId)
+//   name: 'createBudget'
+//   params: {
+//     budgetName: subscriptionAliasName
+//     startDate: '2024-01-01'
+//     endDate: '2025-12-31'
+//     amount: 1000
+//     timeGrain:'Monthly' 
+//     contactEmails: ['sunny.bharne@gmail.com' ]
+//     firstThreshold: 50
+//     secondThreshold: 90
+//   }
+// }

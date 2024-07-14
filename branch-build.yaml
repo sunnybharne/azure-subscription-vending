@@ -34,4 +34,4 @@ jobs:
           location: ${{ variables.location }}
           csmParametersFile: ${{ variables.csmParametersFile }}
           deploymentMode: 'validation'
-      displayName: 'Prifile validation'
+      displayName: 'Preflight validation'
