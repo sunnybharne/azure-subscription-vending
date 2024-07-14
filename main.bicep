@@ -26,7 +26,7 @@ module createSubscription './modules/create-subscription.bicep' = {
 }
 
 module moveSubscription './modules/move-subscription.bicep' = {
-  name: '${subscriptionAliasName}/mg-move'
+  name: '${subscriptionAliasName}/${managementGroupId}'
   params: {
     targetMgId: managementGroupId
     subscriptionId: createSubscription.outputs.id
