@@ -36,6 +36,7 @@ module moveSubscription './modules/move-subscription.bicep' = {
 }
 
 module createBudget './modules/create-budget.bicep' = {
+  scope: subscription(subscriptionAliasName)
   name: 'createBudget'
   params: {
     budgetName: subscriptionAliasName
