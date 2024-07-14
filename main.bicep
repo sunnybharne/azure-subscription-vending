@@ -35,15 +35,16 @@ module moveSubscription './modules/move-subscription.bicep' = {
 
 module createBudget './modules/create-budget.bicep' = {
   name: 'createBudget'
+  scope: subscription(subscriptionAliasName)
   params: {
     amount: 100
     timeGrain: 'Monthly' 
     budgetName: 'Budget'
     endDate: '2022-12-31' 
     startDate: '2022-01-01' 
-    subscriptionId: createSubscription.outputs.id
     contactEmails: ['sunny.bharne@gmail.com']
     firstThreshold: 50
     secondThreshold: 90
   }
 }
+
