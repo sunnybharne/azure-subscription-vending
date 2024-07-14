@@ -25,11 +25,13 @@ module createSubscription './modules/create-subscription.bicep' = {
   }
 }
 
+var subscriptionId = createSubscription.outputs.id
+
 module moveSubscription './modules/move-subscription.bicep' = {
-  name: '${createSubscription.outputs.id}/${managementGroupId}'
+  name: '${subscriptionAliasName}/${managementGroupId}'
   params: {
     targetMgId: managementGroupId
-    subscriptionId: createSubscription.outputs.id
+    subscriptionId: subscriptionId
   }
   dependsOn: [
     createSubscription
