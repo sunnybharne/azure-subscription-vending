@@ -25,9 +25,9 @@ module createSubscription './modules/create-subscription.bicep' = {
   }
 }
 
-var subid = createSubscription.outputs.id
+var subscriptionId = createSubscription.outputs.subscriptionId
 
 resource subToMG 'Microsoft.Management/managementGroups/subscriptions@2020-05-01' = {
   scope: tenant()
-  name: '${managementGroupId}/${subid}'
+  name: '${managementGroupId}/${subscriptionId}'
 }
