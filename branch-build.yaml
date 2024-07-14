@@ -33,4 +33,4 @@ jobs:
           azureResourceManagerConnection: ${{ variables.serviceConnection }}
           location: ${{ variables.location }}
           csmParametersFile: ${{ variables.csmParametersFile }}
-          deploymentName: 'validation'
+          deploymentMode: 'validation'
