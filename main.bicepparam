@@ -10,4 +10,4 @@ param tags = {
   environment: 'Production'
 }
 
-param managementGroupId = '/providers/Microsoft.Management/managementGroups/tuttu-root'
+param managementGroupId = 'management'
