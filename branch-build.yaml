@@ -9,11 +9,16 @@ pr:
 pool:
   name: 'selfhosted'
 
+variables:
+  serviceConnection: 'id-sub'
+  location: 'swedencentral'
+  csmParametersFile: './main.bicepparam'
+
 
 jobs:
 - job:
   displayName: 'branch build'
-  steps: 
+  steps:
     - script: |
         file_array=$(find . -type f -name "*.bicep" -or -name "*.bicepparam")
         for file in $file_array
@@ -22,3 +27,10 @@ jobs:
           az bicep lint -f $file
         done
       displayName: 'lint'
+    - task: AzureResourceManagerTemplateDeployment@3
+      inputs:
+          deploymentScope: 'managementGroup'
+          azureResourceManagerConnection: ${{ variables.serviceConnection }}
+          location: ${{ variables.location }}
+          csmParametersFile: ${{ variables.csmParametersFile }}
+          deploymentName: 'validation'
