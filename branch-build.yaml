@@ -1,0 +1,20 @@
+pr:
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - /*
+
+pool:
+  name: 'selfhosted'
+
+
+jobs:
+- job:
+  displayName: 'Subscription Vending Branch Build'
+  steps: 
+    - script: |
+        echo "lint"
+        az --version
+      displayName: 'lint'
