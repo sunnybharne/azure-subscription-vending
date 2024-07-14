@@ -12,12 +12,23 @@ param workload string
 @description('The tags for the subscription')
 param tags object
 
-module somemodule './modules/create-subscription.bicep' = {
+@description('The management group to move the subscription to')
+param managementGroupId string
+
+module createSubscription './modules/create-subscription.bicep' = {
   name: subscriptionAliasName
   params: {
     billingScope: billingScope
     subscriptionAliasName: subscriptionAliasName
     workload: workload
     tags: tags
+  }
+}
+
+module moveSubscription './modules/move-subscription.bicep' = {
+  name: '$sub-move${subscriptionAliasName}'
+  params: {
+    targetMgId: managementGroupId
+    subscriptionId: createSubscription.outputs.id
   }
 }

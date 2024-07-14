@@ -9,3 +9,5 @@ param workload = 'Production'
 param tags = {
   environment: 'Production'
 }
+
+param managementGroupId = 'tuttu-root'
