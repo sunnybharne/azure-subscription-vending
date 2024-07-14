@@ -13,6 +13,7 @@ variables:
   azureServiceConnection: 'id-sub'
   location: 'swedencentral'
   csmParametersFile: './main.bicepparam'
+  rootMgmId: 'tuttu-root'
 
 
 jobs:
@@ -35,5 +36,6 @@ jobs:
         location: ${{ variables.location }}
         deploymentMode: Validation
         csmParametersFile: ${{ variables.csmParametersFile }} 
+        ManagementGroupId: ${{ variables.rootMgmId }}
       displayName: 'Preflight validation'
 
