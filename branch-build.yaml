@@ -15,6 +15,5 @@ jobs:
   displayName: 'Subscription Vending Branch Build'
   steps: 
     - script: |
-        echo "lint"
-        az --version
+        az bicep build -f ./main.bicep
       displayName: 'lint'
