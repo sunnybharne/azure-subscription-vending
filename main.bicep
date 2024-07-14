@@ -25,15 +25,7 @@ module createSubscription './modules/create-subscription.bicep' = {
   }
 }
 
-var subscriptionId = createSubscription.outputs.id
-
-module moveSubscription './modules/move-subscription.bicep' = {
-  name: '${subscriptionAliasName}/${managementGroupId}'
-  params: {
-    targetMgId: managementGroupId
-    subscriptionId: subscriptionId
-  }
-  dependsOn: [
-    createSubscription
-  ]
+resource subToMG 'Microsoft.Management/managementGroups/subscriptions@2020-05-01' = {
+  scope: tenant()
+  name: '${managementGroupId}/${subscriptionAliasName}'
 }
