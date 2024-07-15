@@ -33,17 +33,17 @@ module moveSubscription './modules/move-subscription.bicep' = {
   }
 }
 
-module createBudget './modules/create-budget.bicep' = {
-  scope: subscription(subscriptionAliasName)
-  name: 'createBudget'
-  params: {
-    budgetName: subscriptionAliasName
-    startDate: '2024-01-01'
-    endDate: '2025-12-31'
-    amount: 1000
-    timeGrain:'Monthly' 
-    contactEmails: ['sunny.bharne@gmail.com' ]
-    firstThreshold: 50
-    secondThreshold: 90
-   }
-}
+// module createBudget './modules/create-budget.bicep' = {
+//   scope: subscription(subscriptionAliasName)
+//   name: 'createBudget'
+//   params: {
+//     budgetName: subscriptionAliasName
+//     startDate: '2024-01-01'
+//     endDate: '2025-12-31'
+//     amount: 1000
+//     timeGrain:'Monthly' 
+//     contactEmails: ['sunny.bharne@gmail.com' ]
+//     firstThreshold: 50
+//     secondThreshold: 90
+//    }
+// }
